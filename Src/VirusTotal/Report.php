@@ -9,7 +9,7 @@ class Report extends ApiBase
      */
     public function getReport($resource) {
         $data = $this->makeRequest( array(
-                        'resource' => 'http://www.google.com',
+                        'resource' => $resource,
                         'apikey'   => $this->_apiKey,
                     ));
         return $data->json();
