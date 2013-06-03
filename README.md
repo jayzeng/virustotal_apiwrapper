@@ -3,6 +3,9 @@
 
 Project website: (http://jayzeng.github.com/virustotal_apiwrapper/)
 
+##Warning:
+This project is work in progress, please wait for a stable release if you want to use it in production
+
 ##Usage:
 - You will need composer (http://getcomposer.org/)
 - composer install -v -o
