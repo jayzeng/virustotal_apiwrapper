@@ -3,6 +3,8 @@
 
 Project website: (http://jayzeng.github.com/virustotal_apiwrapper/)
 
+This is a PHP sdk to interact with Virus Total Public API v2.0, please see https://www.virustotal.com/en/documentation/public-api for details
+
 ##Warning:
 This project is work in progress, please wait for a stable release if you want to use it in production
 
