@@ -31,8 +31,8 @@ class ApiBase
         }
     }
 
-    protected function makeRequest(array $params) {
-        $request = $this->_client->post('url/report', null, $params);
+    protected function makePostRequest($endpoint, array $params) {
+        $request = $this->_client->post($endpoint, null, $params);
         return $request->send();
     }
 }

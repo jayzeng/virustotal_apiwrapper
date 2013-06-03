@@ -8,7 +8,7 @@ class Report extends ApiBase
      * @param string $resource a URL will retrieve the most recent report on the given URL
      */
     public function getReport($resource) {
-        $data = $this->makeRequest( array(
+        $data = $this->makePostRequest('url/report', array(
                         'resource' => $resource,
                         'apikey'   => $this->_apiKey,
                     ));
