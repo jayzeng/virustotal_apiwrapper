@@ -31,6 +31,11 @@ class ApiBase
         }
     }
 
+    /**
+     * Util function to make post request
+     * @param string          $endpoint
+     * @param array           $params
+     */
     protected function makePostRequest($endpoint, array $params) {
         $request = $this->_client->post($endpoint, null, $params);
         return $request->send();
