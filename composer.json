@@ -1,9 +1,9 @@
 {
-    "name": "jayzeng/config-reader",
+    "name": "jayzeng/virustotalapi",
     "description": "VirusTotal Public API v2.0 PHP Wrapper",
     "type": "library",
     "keywords": ["virus","virustotal", "api", "php", "wrapper", "security"],
-    "homepage": "https://github.com/jayzeng/config-reader",
+    "homepage": "https://github.com/jayzeng/virustotal_apiwrapper",
     "license": "MIT",
     "authors": [
         {
