@@ -51,6 +51,11 @@ array(8) {
 ##Example:
 Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples)
 
+##How to run tests?
+```bash
+phpunit --configuration Tests/Conf/phpunit.xml Tests
+```
+
 ##Issues & Development
 - Source hosted [GitHub](https://github.com/jayzeng/virustotal_apiwrapper)
 - Report issues, questions, feature requests on [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues)
@@ -62,6 +67,16 @@ Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_ap
 ```bash
 make release RELEASE_VERSION="0.1" RELEASE_MESSAGE="v0.1 is released"
 ```
+
+##How to contribute?
+Awesome! Please follow these steps:
+- Create an issue [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues) to explain what you will do
+- Fork the repository into your GitHub account
+- Create a new branch with a good name (e.g: feature/issue1_add_urlendpoint)
+- Implement/Refactor tests
+- Check in code
+- Pass tests & travis build
+
 
 ##Author:
 [Jay Zeng](https://github.com/jayzeng/), e-mail: [jayzeng@jay-zeng.com](mailto:jayzeng@jay-zeng.com)
