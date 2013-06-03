@@ -11,4 +11,4 @@ before_script:
   - php composer.phar update -v
 
 script:
-  - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
+  - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml Tests

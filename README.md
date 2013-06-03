@@ -1,4 +1,4 @@
-# VirusTotal Public API v2.0 PHP Wrapper
+# Virus Total Public API v2.0 PHP Wrapper
 [![Build Status](https://travis-ci.org/jayzeng/virustotal_apiwrapper.png)](https://travis-ci.org/jayzeng/virustotal_apiwrapper)
 
 Project website: (http://jayzeng.github.com/virustotal_apiwrapper/)
