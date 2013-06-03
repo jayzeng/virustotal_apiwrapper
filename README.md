@@ -44,7 +44,7 @@ array(8) {
 ```
 
 ##Example:
-See Examples/
+Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples)
 
 ##Issues & Development
 - Source hosted [GitHub](https://github.com/jayzeng/virustotal_apiwrapper)
