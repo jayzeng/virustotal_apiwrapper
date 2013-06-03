@@ -4,6 +4,7 @@
 Project website: (http://jayzeng.github.com/virustotal_apiwrapper/)
 
 ##Usage:
+See Examples/
 
 ##Issues & Development
 - Source hosted [GitHub](https://github.com/jayzeng/virustotal_apiwrapper)
