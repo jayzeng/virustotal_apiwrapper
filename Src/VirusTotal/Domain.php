@@ -4,12 +4,12 @@ namespace VirusTotal;
 class Domain extends ApiBase
 {
     /**
-     * @see https://www.virustotal.com/en/documentation/public-api/#scanning-files
-     * @param string $ip       a valid IPv4 address in dotted quad notation
+     * @see https://www.virustotal.com/en/documentation/public-api/#getting-domain-reports
+     * @param string $domain       a domain name
      */
-    public function getReport($ip) {
-        $data = $this->makePostRequest('domain/report', array(
-                        'domain'   => $ip,
+    public function getReport($domain) {
+        $data = $this->makeGetRequest('domain/report', array(
+                        'domain'   => $domain,
                         'apikey'   => $this->_apiKey,
                     ));
         return $data->json();

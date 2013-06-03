@@ -20,4 +20,8 @@
             <directory suffix=".php">../Src</directory>
         </whitelist>
     </filter>
+
+    <php>
+        <const name="apikey" value=""/>
+    </php>
 </phpunit>

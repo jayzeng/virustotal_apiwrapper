@@ -8,7 +8,7 @@ class Ip extends ApiBase
      * @param string $ip       a valid IPv4 address in dotted quad notation
      */
     public function getReport($ip) {
-        $data = $this->makePostRequest('ip-address/report', array(
+        $data = $this->makeGetRequest('ip-address/report', array(
                         'ip'       => $ip,
                         'apikey'   => $this->_apiKey,
                     ));
