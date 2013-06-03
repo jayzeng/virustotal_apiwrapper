@@ -31,37 +31,105 @@
         <hr>
 
         <section id="main_content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="virus-total-public-api-v20-php-wrapper" class="anchor" href="#virus-total-public-api-v20-php-wrapper"><span class="octicon octicon-link"></span></a>Virus Total Public API v2.0 PHP Wrapper</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p><a href="https://travis-ci.org/jayzeng/virustotal_apiwrapper"><img src="https://travis-ci.org/jayzeng/virustotal_apiwrapper.png" alt="Build Status"></a></p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>Project website: (<a href="http://jayzeng.github.com/virustotal_apiwrapper/">http://jayzeng.github.com/virustotal_apiwrapper/</a>)</p>
+
+<p>This is a PHP sdk to interact with Virus Total Public API v2.0, please see <a href="https://www.virustotal.com/en/documentation/public-api">https://www.virustotal.com/en/documentation/public-api</a> for details</p>
+
+<h2>
+<a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning:</h2>
+
+<p>This project is work in progress, please wait for a stable release if you want to use it in production</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h2>
+
+<ul>
+<li>You will need composer (<a href="http://getcomposer.org/">http://getcomposer.org/</a>)</li>
+<li>composer install -v -o</li>
+</ul><pre><code>&lt;?php
+require_once 'Vendors/autoload.php';
+
+$apiKey = 'your_api_key';
+
+$file = new VirusTotal\File($apiKey);
+$resp = $file-&gt;scan('foo.txt');
+
+var_dump($resp);
+?&gt;
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Sample output</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<pre><code>[jayzeng] ~/Projects/virustotal_apiwrapper/Example] (master)&gt;  php file.php |more
+array(8) {
+  ["scan_id"]=&gt;
+  string(75) "1afc739de16163a80380326ce05e1e69edfc99b7a931329ab127b5099377f076-1370244536"
+  ["sha1"]=&gt;
+  string(40) "da9ed61e1bfa981c545acad4136e8a05f0602e45"
+  ["resource"]=&gt;
+  string(64) "1afc739de16163a80380326ce05e1e69edfc99b7a931329ab127b5099377f076"
+  ["response_code"]=&gt;
+  int(1)
+  ["sha256"]=&gt;
+  string(64) "1afc739de16163a80380326ce05e1e69edfc99b7a931329ab127b5099377f076"
+  ["permalink"]=&gt;
+  string(117) "https://www.virustotal.com/file/1afc739de16163a80380326ce05e1e69edfc99b7a931329ab127b5099377f076/analysis/1370244536/"
+  ["md5"]=&gt;
+  string(32) "b2f301b40a5fb752b19ae0e5c7f679b4"
+  ["verbose_msg"]=&gt;
+  string(64) "Scan request successfully queued, come back later for the report"
+}
+</code></pre>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example:</h2>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>Still feeling confusing? See Examples/ (<a href="https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples">https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples</a>)</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h2>
+<a name="how-to-run-tests" class="anchor" href="#how-to-run-tests"><span class="octicon octicon-link"></span></a>How to run tests?</h2>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<div class="highlight"><pre>phpunit --configuration Tests/Conf/phpunit.xml Tests
+</pre></div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h2>
+<a name="issues--development" class="anchor" href="#issues--development"><span class="octicon octicon-link"></span></a>Issues &amp; Development</h2>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<ul>
+<li>Source hosted <a href="https://github.com/jayzeng/virustotal_apiwrapper">GitHub</a>
+</li>
+<li>Report issues, questions, feature requests on <a href="https://github.com/jayzeng/virustotal_apiwrapper/issues">GitHub Issues</a>
+</li>
+</ul><h2>
+<a name="how-to-release-new-version" class="anchor" href="#how-to-release-new-version"><span class="octicon octicon-link"></span></a>How to release new version?</h2>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+<li>RELEASE_VERSION - version number</li>
+<li>RELEASE_MESSAGE - release message</li>
+</ul><div class="highlight"><pre>make release <span class="nv">RELEASE_VERSION</span><span class="o">=</span><span class="s2">"0.1"</span> <span class="nv">RELEASE_MESSAGE</span><span class="o">=</span><span class="s2">"v0.1 is released"</span>
+</pre></div>
+
+<h2>
+<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute?</h2>
+
+<p>Awesome! Please follow these steps:</p>
+
+<ul>
+<li>Create an issue <a href="https://github.com/jayzeng/virustotal_apiwrapper/issues">GitHub Issues</a> to explain what you will do</li>
+<li>Fork the repository into your GitHub account</li>
+<li>Create a new branch with a good name (e.g: feature/issue1_add_urlendpoint)</li>
+<li>Implement/Refactor tests</li>
+<li>Check in code</li>
+<li>Pass tests &amp; travis build</li>
+</ul><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author:</h2>
+
+<p><a href="https://github.com/jayzeng/">Jay Zeng</a>, e-mail: <a href="mailto:jayzeng@jay-zeng.com">jayzeng@jay-zeng.com</a></p>
         </section>
 
         <footer>
