@@ -22,6 +22,7 @@ Include the following in your composer.json:
 ```
 - composer update -v -o
 
+## Quick start:
 ```
 <?php
 require_once 'Vendors/autoload.php';
