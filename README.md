@@ -51,6 +51,8 @@ array(8) {
 ##Example:
 Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples)
 
+I also hack up a demo application, source code is available at https://github.com/jayzeng/virustotal_demoapp
+
 ##How to run tests?
 ```bash
 phpunit --configuration Tests/Conf/phpunit.xml Tests
