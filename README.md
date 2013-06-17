@@ -10,7 +10,17 @@ This project is work in progress, please wait for a stable release if you want t
 
 ##Usage:
 - You will need composer (http://getcomposer.org/)
-- composer install -v -o
+- composer search virustotalapi or visit the package info on packagist (https://packagist.org/packages/jayzeng/virustotalapi)
+
+Include the following in your composer.json:
+```json
+{
+  "require": {
+    "jayzeng/virustotalapi": "dev-master"
+  }
+}
+```
+- composer update -v -o
 
 ```
 <?php
