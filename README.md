@@ -68,6 +68,11 @@ Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_ap
 I also hack up a demo application, source code is available at https://github.com/jayzeng/virustotal_demoapp
 
 ##How to run tests?
+Provide your apikey in virustotal_apiwrapper/Tests/Conf/phpunit.xml
+```xml
+<const name="apikey" value="your_key_here"/>
+```
+
 ```bash
 phpunit --configuration Tests/Conf/phpunit.xml Tests
 ```
