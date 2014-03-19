@@ -10,7 +10,7 @@
     >
 
     <testsuites>
-        <testsuite name="Config Reader Test Suite" >
+        <testsuite name="VirusTotal API wrapper Test Suite" >
             <directory>../Src/</directory>
         </testsuite>
     </testsuites>

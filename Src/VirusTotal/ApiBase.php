@@ -1,6 +1,9 @@
 <?php
 namespace VirusTotal;
 
+/**
+ * Light-weight Factory to construct HTTP calls
+ */
 class ApiBase
 {
     /**
@@ -21,9 +24,9 @@ class ApiBase
     /**
      * Constructor
      * @param string          $apiKey
-     * @param ClientInterface $client
+     * @param \Guzzle\Http\ClientInterface $client
      */
-    public function __construct($apiKey, ClientInterface $client = null) {
+    public function __construct($apiKey, \Guzzle\Http\ClientInterface $client = null) {
         $this->_apiKey =  $apiKey;
 
         if ( empty( $client) ) {
@@ -36,6 +39,8 @@ class ApiBase
      * @param string          $endpoint
      * @param array           $params
      * @return (?)
+     * @see \Guzzle\Http\Client
+     * @throws \GuzzleHttp\Exception\RequestException
      */
     protected function makePostRequest($endpoint, array $params) {
         $request = $this->_client->post($endpoint, null, $params);
@@ -59,7 +64,7 @@ class ApiBase
         //                'apikey'   => 'supersecureapikey'
         //            )
         //
-        // It will translates to:
+        // It maps to:
         // https://www.virustotal.com/vtapi/v2/ip-address/report?ip=192.168.2.1&apikey=supersecureapikey
         $url = self::API_ENDPOINT . $endpoint . '?'. http_build_query($params);
         $request = $this->_client->get($url);
