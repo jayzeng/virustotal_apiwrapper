@@ -22,6 +22,6 @@
     </filter>
 
     <php>
-        <const name="apikey" value=""/>
+        <const name="apiKey" value="fakeKey"/>
     </php>
 </phpunit>

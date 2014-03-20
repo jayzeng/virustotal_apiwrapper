@@ -12,12 +12,27 @@ use \VirusTotal\Ip;
 class IpTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetReport() {
-        $ip = new Ip(apikey);
+        $mockResponse = array(
+            'response_code' => 1,
+            'resolutions' => array(
+                array(
+                    'last_resolved' => null,
+                    'hostname' => '027.ru'
+                )
+            ),
+            'verbose_msg' => 'IP address found in dataset'
+        );
+        $ipStub = $this->getMock('\VirusTotal\Ip',
+                               array('getReport'),
+                               array(apiKey));
+        $ipStub->expects($this->any())
+             ->method('getReport')
+             ->will($this->returnValue($mockResponse));
 
         // ip copied from https://www.virustotal.com/en/documentation/public-api/#getting-ip-reports
-        $response = $ip->getReport('90.156.201.27');
+        $response = $ipStub->getReport('90.156.201.27');
 
-        $this->assertArrayHasKey('resolutions', $response);
+        $this->assertSame('027.ru', $response['resolutions'][0]['hostname']);
         $this->assertSame($response['verbose_msg'], 'IP address found in dataset');
     }
 }
