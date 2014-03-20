@@ -1,6 +1,12 @@
 <?php
 namespace VirusTotal;
 
+/**
+ * Domain report
+ * @category VirusTotal
+ * @package VirusTotal
+ * @author Jay Zeng (jayzeng@jay-zeng.com)
+ */
 class Domain extends ApiBase
 {
     /**
