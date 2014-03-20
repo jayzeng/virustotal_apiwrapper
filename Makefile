@@ -39,4 +39,4 @@ test:
 release:
 	@git tag -a "$$RELEASE_VERSION" -m "$$RELEASE_MESSAGE"
 	git describe --tags
-	git push --tags
+	git push --tags --force
