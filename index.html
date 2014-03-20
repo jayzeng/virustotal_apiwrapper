@@ -1,57 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <title>Virus Total Public API v.20 PHP Wrapper by jayzeng</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/jayzeng/virustotal_apiwrapper">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/jayzeng/virustotal_apiwrapper/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/jayzeng/virustotal_apiwrapper/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-        <header>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
           <h1>Virus Total Public API v.20 PHP Wrapper</h1>
-          <h2>Virus Total Public API v2.0 PHP Wrapper</h2>
-        </header>
+          <p>Virus Total Public API v2.0 PHP Wrapper</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jayzeng">jayzeng</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/jayzeng/virustotal_apiwrapper/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/jayzeng/virustotal_apiwrapper/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/jayzeng/virustotal_apiwrapper" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
+        <h1>
 <a name="virus-total-public-api-v20-php-wrapper" class="anchor" href="#virus-total-public-api-v20-php-wrapper"><span class="octicon octicon-link"></span></a>Virus Total Public API v2.0 PHP Wrapper</h1>
 
-<p><a href="https://travis-ci.org/jayzeng/virustotal_apiwrapper"><img src="https://travis-ci.org/jayzeng/virustotal_apiwrapper.png" alt="Build Status"></a></p>
+<p><a href="https://packagist.org/packages/jayzeng/virustotalapi"><img src="https://poser.pugx.org/jayzeng/virustotalapi/downloads.png" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/jayzeng/virustotalapi"><img src="https://poser.pugx.org/jayzeng/virustotalapi/v/stable.png" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/jayzeng/virustotalapi"><img src="https://poser.pugx.org/jayzeng/virustotalapi/v/unstable.png" alt="Latest Unstable Version"></a>
+<a href="https://travis-ci.org/jayzeng/virustotal_apiwrapper"><img src="https://travis-ci.org/jayzeng/virustotal_apiwrapper.png" alt="Build Status"></a></p>
 
-<p>Project website: (<a href="http://jayzeng.github.com/virustotal_apiwrapper/">http://jayzeng.github.com/virustotal_apiwrapper/</a>)</p>
+<p>Project website: (<a href="http://jayzeng.github.io/virustotal_apiwrapper/">http://jayzeng.github.io/virustotal_apiwrapper/</a>)</p>
 
-<p>This is a PHP sdk to interact with Virus Total Public API v2.0, please see <a href="https://www.virustotal.com/en/documentation/public-api">https://www.virustotal.com/en/documentation/public-api</a> for details</p>
-
-<h2>
-<a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning:</h2>
-
-<p>This project is work in progress, please wait for a stable release if you want to use it in production</p>
+<p>This is a PHP SDK to interact with Virus Total Public API v2.0, please see <a href="https://www.virustotal.com/en/documentation/public-api">https://www.virustotal.com/en/documentation/public-api</a> for details</p>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h2>
 
 <ul>
 <li>You will need composer (<a href="http://getcomposer.org/">http://getcomposer.org/</a>)</li>
-<li>composer install -v -o</li>
-</ul><pre><code>&lt;?php
+<li>composer search virustotalapi or visit the package info on packagist (<a href="https://packagist.org/packages/jayzeng/virustotalapi">https://packagist.org/packages/jayzeng/virustotalapi</a>)</li>
+</ul><p>Include the following in your composer.json:</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>
+  <span class="nt">"require"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"jayzeng/virustotalapi"</span><span class="p">:</span> <span class="s2">"dev-master"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>composer update -v -o</li>
+</ul><h2>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick start:</h2>
+
+<pre><code>&lt;?php
 require_once 'Vendors/autoload.php';
 
 $apiKey = 'your_api_key';
@@ -91,11 +110,18 @@ array(8) {
 
 <p>Still feeling confusing? See Examples/ (<a href="https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples">https://github.com/jayzeng/virustotal_apiwrapper/tree/master/Examples</a>)</p>
 
+<p>I also hack up a demo application, source code is available at <a href="https://github.com/jayzeng/virustotal_demoapp">https://github.com/jayzeng/virustotal_demoapp</a></p>
+
 <h2>
 <a name="how-to-run-tests" class="anchor" href="#how-to-run-tests"><span class="octicon octicon-link"></span></a>How to run tests?</h2>
 
-<div class="highlight"><pre>phpunit --configuration Tests/Conf/phpunit.xml Tests
+<div class="highlight highlight-bash"><pre>phpunit --configuration Tests/Conf/phpunit.xml Tests
 </pre></div>
+
+<p>Or</p>
+
+<pre><code>Vendors/bin/phpunit --configuration Tests/Conf/phpunit.xml Tests
+</code></pre>
 
 <h2>
 <a name="issues--development" class="anchor" href="#issues--development"><span class="octicon octicon-link"></span></a>Issues &amp; Development</h2>
@@ -111,7 +137,7 @@ array(8) {
 <ul>
 <li>RELEASE_VERSION - version number</li>
 <li>RELEASE_MESSAGE - release message</li>
-</ul><div class="highlight"><pre>make release <span class="nv">RELEASE_VERSION</span><span class="o">=</span><span class="s2">"0.1"</span> <span class="nv">RELEASE_MESSAGE</span><span class="o">=</span><span class="s2">"v0.1 is released"</span>
+</ul><div class="highlight highlight-bash"><pre>make release <span class="nv">RELEASE_VERSION</span><span class="o">=</span><span class="s2">"0.1"</span> <span class="nv">RELEASE_MESSAGE</span><span class="o">=</span><span class="s2">"v0.1 is released"</span>
 </pre></div>
 
 <h2>
@@ -130,14 +156,11 @@ array(8) {
 <a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author:</h2>
 
 <p><a href="https://github.com/jayzeng/">Jay Zeng</a>, e-mail: <a href="mailto:jayzeng@jay-zeng.com">jayzeng@jay-zeng.com</a></p>
-        </section>
+      </section>
 
-        <footer>
-          Virus Total Public API v.20 PHP Wrapper is maintained by <a href="https://github.com/jayzeng">jayzeng</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-                  <script type="text/javascript">
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -148,7 +171,5 @@ array(8) {
             } catch(err) {}
           </script>
 
-      </div>
-    </div>
   </body>
 </html>
