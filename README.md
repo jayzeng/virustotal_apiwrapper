@@ -6,10 +6,7 @@
 
 Project website: (http://jayzeng.github.io/virustotal_apiwrapper/)
 
-This is a PHP sdk to interact with Virus Total Public API v2.0, please see https://www.virustotal.com/en/documentation/public-api for details
-
-##Warning:
-This project is work in progress, please wait for a stable release if you want to use it in production
+This is a PHP SDK to interact with Virus Total Public API v2.0, please see https://www.virustotal.com/en/documentation/public-api for details
 
 ##Usage:
 - You will need composer (http://getcomposer.org/)
@@ -68,13 +65,13 @@ Still feeling confusing? See Examples/ (https://github.com/jayzeng/virustotal_ap
 I also hack up a demo application, source code is available at https://github.com/jayzeng/virustotal_demoapp
 
 ##How to run tests?
-Provide your apikey in virustotal_apiwrapper/Tests/Conf/phpunit.xml
-```xml
-<const name="apikey" value="your_key_here"/>
-```
-
 ```bash
 phpunit --configuration Tests/Conf/phpunit.xml Tests
+```
+
+Or
+```
+Vendors/bin/phpunit --configuration Tests/Conf/phpunit.xml Tests
 ```
 
 ##Issues & Development
