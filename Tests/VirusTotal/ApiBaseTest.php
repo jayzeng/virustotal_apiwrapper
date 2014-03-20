@@ -7,7 +7,6 @@
  */
 namespace Tests\VirusTotal;
 
-use \VirusTotal\ApiBase as ApiBase;
 use \Guzzle\Http\Client as GuzzleClient;
 
 class ApiBaseTest extends \PHPUnit_Framework_TestCase
@@ -17,7 +16,7 @@ class ApiBaseTest extends \PHPUnit_Framework_TestCase
      * returns an instance of \VirusTotal\ApiBase
      */
     public function testCtor() {
-        $apiBaseStub = new ApiBase('fakeKey', new GuzzleClient());
+        $apiBaseStub = new \VirusTotal\ApiBase('fakeKey', new GuzzleClient());
         $this->assertInstanceOf('\VirusTotal\ApiBase', $apiBaseStub);
     }
 }
