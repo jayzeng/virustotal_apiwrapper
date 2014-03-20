@@ -1,7 +1,7 @@
 # Virus Total Public API v2.0 PHP Wrapper
 [![Total Downloads](https://poser.pugx.org/jayzeng/virustotalapi/downloads.png)](https://packagist.org/packages/jayzeng/virustotalapi)
 [![Latest Stable Version](https://poser.pugx.org/jayzeng/virustotalapi/v/stable.png)](https://packagist.org/packages/jayzeng/virustotalapi)
-[![Latest Unstable Version](https://poser.pugx.org/jayzeng/virustotalapi/v/unstable.png)](https://packagist.org/packages/jayzeng/virustotalapi)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jayzeng/virustotal_apiwrapper/badges/quality-score.png?s=46248d98379ddfeb153958114f71d5ea80a47cf9)](https://scrutinizer-ci.com/g/jayzeng/virustotal_apiwrapper/)
 [![Build Status](https://travis-ci.org/jayzeng/virustotal_apiwrapper.png)](https://travis-ci.org/jayzeng/virustotal_apiwrapper)
 
 Project website: (http://jayzeng.github.io/virustotal_apiwrapper/)
