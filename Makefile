@@ -37,6 +37,6 @@ test:
 	./Vendors/bin/phpunit --configuration $(PHPUNITCONFIG)
 
 release:
-	@git tag -a "v$$RELEASE_VERSION" -m "$$RELEASE_MESSAGE"
+	@git tag -a "$$RELEASE_VERSION" -m "$$RELEASE_MESSAGE"
 	git describe --tags
 	git push --tags
