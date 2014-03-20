@@ -2,3 +2,5 @@
 inherit: true
 
 tools:
+    php_code_coverage: true
+    php_analyzer: true
