@@ -7,7 +7,7 @@
  */
 namespace Tests\VirusTotal;
 
-use \VirusTotal\ApiBase;
+use \VirusTotal\ApiBase as ApiBase;
 use \Guzzle\Http\Client as GuzzleClient;
 
 class ApiBaseTest extends \PHPUnit_Framework_TestCase

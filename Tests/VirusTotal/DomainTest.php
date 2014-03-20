@@ -15,7 +15,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         // Mock real response
         $mockResponse = array(
             'detected_downloaded_samples' => array(
-                0 => array(
+                array(
                     'date'      => '2013-06-20 18:51:30',
                     'positives' => 2,
                     'total'     => 46,
