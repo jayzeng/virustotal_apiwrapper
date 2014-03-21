@@ -19,4 +19,5 @@ class ApiBaseTest extends \PHPUnit_Framework_TestCase
         $apiBaseStub = new \VirusTotal\ApiBase(apiKey, new GuzzleClient());
         $this->assertInstanceOf('\VirusTotal\ApiBase', $apiBaseStub);
     }
+
 }

@@ -40,11 +40,18 @@ class ApiBase
      * @param array           $params
      * @return (?)
      * @see \Guzzle\Http\Client
-     * @throws \GuzzleHttp\Exception\RequestException
+     * @throw \VirusTotal\Exceptions\RateLimitException
+     * @throw \VirusTotal\Exceptions\InvalidApiKeyException
      */
     protected function makePostRequest($endpoint, array $params) {
-        $request = $this->_client->post($endpoint, null, $params);
-        return $request->send();
+        try {
+            $request = $this->_client->post($endpoint, null, $params);
+            $response = $request->send();
+            $this->validateResponse($response->getStatusCode());
+            return $response;
+        } catch(\Guzzle\Http\Exception\ClientErrorResponseException $e) {
+            $this->validateResponse($e->getResponse()->getStatusCode());
+        }
     }
 
 
@@ -53,6 +60,8 @@ class ApiBase
      * @param string          $endpoint
      * @param array           $params
      * @return (?)
+     * @throw \VirusTotal\Exceptions\RateLimitException
+     * @throw \VirusTotal\Exceptions\InvalidApiKeyException
      */
     protected function makeGetRequest($endpoint, array $params) {
         // Constructs get url
@@ -66,9 +75,32 @@ class ApiBase
         //
         // It maps to:
         // https://www.virustotal.com/vtapi/v2/ip-address/report?ip=192.168.2.1&apikey=supersecureapikey
-        $url = self::API_ENDPOINT . $endpoint . '?'. http_build_query($params);
-        $request = $this->_client->get($url);
-        return $request->send();
+        try {
+            $url = self::API_ENDPOINT . $endpoint . '?'. http_build_query($params);
+            $request = $this->_client->get($url);
+            $response = $request->send();
+            $this->validateResponse($response->getStatusCode());
+            return $response;
+        } catch(\Guzzle\Http\Exception\ClientErrorResponseException $e) {
+            $this->validateResponse($e->getResponse()->getStatusCode());
+        }
+    }
+
+    /**
+     * Validate response by looking up the http status code
+     * @param int $statusCode - http status code
+     * @throw \VirusTotal\Exceptions\RateLimitException
+     * @throw \VirusTotal\Exceptions\InvalidApiKeyException
+     */
+    protected function validateResponse($statusCode) {
+        switch($statusCode) {
+            case 204:
+                throw new Exceptions\RateLimitException('Too many requests');
+            case 403:
+                throw new Exceptions\InvalidApiKeyException(sprintf('Key %s is invalid', $this->_apiKey));
+            default:
+                return;
+        }
     }
 }
 

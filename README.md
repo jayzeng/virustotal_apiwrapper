@@ -9,8 +9,8 @@ Project website: (http://jayzeng.github.io/virustotal_apiwrapper/)
 
 This is a PHP SDK to interact with Virus Total Public API v2.0, please see https://www.virustotal.com/en/documentation/public-api for details
 
-## I want to show my appreciation! 
-If you find the project useful and would love show your appreciation, awesome! 
+## I want to show you my appreciation!
+If you find the project useful and would love show your appreciation, awesome!
 
 [![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/jayzeng/)
 
@@ -26,7 +26,10 @@ Include the following in your composer.json:
   }
 }
 ```
-- composer update -v -o
+
+```
+composer update -v -o
+```
 
 ## Quick start:
 ```
