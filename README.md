@@ -4,9 +4,15 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jayzeng/virustotal_apiwrapper/badges/quality-score.png?s=46248d98379ddfeb153958114f71d5ea80a47cf9)](https://scrutinizer-ci.com/g/jayzeng/virustotal_apiwrapper/)
 [![Build Status](https://travis-ci.org/jayzeng/virustotal_apiwrapper.png)](https://travis-ci.org/jayzeng/virustotal_apiwrapper)
 
+
 Project website: (http://jayzeng.github.io/virustotal_apiwrapper/)
 
 This is a PHP SDK to interact with Virus Total Public API v2.0, please see https://www.virustotal.com/en/documentation/public-api for details
+
+## I want to show my appreciation! 
+If you find the project useful and would love show your appreciation, awesome! 
+
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/jayzeng/)
 
 ##Usage:
 - You will need composer (http://getcomposer.org/)
