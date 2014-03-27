@@ -84,8 +84,8 @@ Vendors/bin/phpunit --configuration Tests/Conf/phpunit.xml Tests
 ```
 
 ##Issues & Development
-- Source hosted [GitHub](https://github.com/jayzeng/virustotal_apiwrapper)
-- Report issues, questions, feature requests on [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues)
+- Source code is hosted on [GitHub](https://github.com/jayzeng/virustotal_apiwrapper)
+- Report issues, questions, or request features on [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues)
 
 ##How to release new version?
 - RELEASE_VERSION - version number
@@ -97,11 +97,12 @@ make release RELEASE_VERSION="0.1" RELEASE_MESSAGE="v0.1 is released"
 
 ##How to contribute?
 Awesome! Please follow these steps:
-- Create an issue [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues) to explain what you will do
+- Create an issue [GitHub Issues](https://github.com/jayzeng/virustotal_apiwrapper/issues) to explain what you intended to do
 - Fork the repository into your GitHub account
-- Create a new branch with a good name (e.g: feature/issue1_add_urlendpoint)
-- Implement/Refactor tests
-- Check in code
+- Create a new branch (preferably with a descriptive name that ties to the issue number e.g: feature/issue1_add_urlendpoint)
+- Add/Refactor tests
+- Run tests locally (Please reference [How to run tests](https://github.com/jayzeng/virustotal_apiwrapper/#how-to-run-tests)) and make sure they all pass locally
+- Send in a pull request
 - Pass tests & travis build
 
 
