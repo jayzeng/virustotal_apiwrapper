@@ -45,7 +45,7 @@ var_dump($resp);
 ?>
 ```
 
-Sample output
+Sample output:
 ```
 [jayzeng] ~/Projects/virustotal_apiwrapper/Example] (master)>  php file.php |more
 array(8) {
