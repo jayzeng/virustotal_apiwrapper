@@ -1,0 +1,12 @@
+{
+    "name": "root/virus_total",
+    "authors": [
+        {
+            "name": "Jay Zeng",
+            "email": "jayzeng@jay-zeng.com"
+        }
+    ],
+    "require": {
+        "jayzeng/virustotalapi": "dev-master"
+    }
+}
