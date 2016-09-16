@@ -1,13 +1,17 @@
 <?php
 namespace VirusTotal;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\ClientException;
+
 /**
  * Light-weight Factory to construct HTTP calls
  */
 class ApiBase
 {
     /**
-     * @var Virus Total API endpoint prefix
+     * @var string - Virus Total API endpoint prefix
      */
     const API_ENDPOINT = 'https://www.virustotal.com/vtapi/v2/';
 
@@ -24,13 +28,15 @@ class ApiBase
     /**
      * Constructor
      * @param string          $apiKey
-     * @param \Guzzle\Http\ClientInterface $client
+     * @param ClientInterface $client
      */
-    public function __construct($apiKey, \Guzzle\Http\ClientInterface $client = null) {
+    public function __construct($apiKey, ClientInterface $client = null) {
         $this->_apiKey =  $apiKey;
 
         if ( empty( $client) ) {
-            $this->_client = new \Guzzle\Http\Client(self::API_ENDPOINT);
+            $this->_client = new Client(array(
+                'base_uri' => self::API_ENDPOINT,
+            ));
         }
     }
 
@@ -39,17 +45,16 @@ class ApiBase
      * @param string          $endpoint
      * @param array           $params
      * @return (?)
-     * @see \Guzzle\Http\Client
+     * @see Client
      * @throw \VirusTotal\Exceptions\RateLimitException
      * @throw \VirusTotal\Exceptions\InvalidApiKeyException
      */
     protected function makePostRequest($endpoint, array $params) {
         try {
-            $request = $this->_client->post($endpoint, null, $params);
-            $response = $request->send();
+            $response = $this->_client->post($endpoint, $params);
             $this->validateResponse($response->getStatusCode());
             return $response;
-        } catch(\Guzzle\Http\Exception\ClientErrorResponseException $e) {
+        } catch(ClientException $e) {
             $this->validateResponse($e->getResponse()->getStatusCode());
         }
     }
@@ -77,11 +82,10 @@ class ApiBase
         // https://www.virustotal.com/vtapi/v2/ip-address/report?ip=192.168.2.1&apikey=supersecureapikey
         try {
             $url = self::API_ENDPOINT . $endpoint . '?'. http_build_query($params);
-            $request = $this->_client->get($url);
-            $response = $request->send();
+            $response = $this->_client->get($url);
             $this->validateResponse($response->getStatusCode());
             return $response;
-        } catch(\Guzzle\Http\Exception\ClientErrorResponseException $e) {
+        } catch(ClientException $e) {
             $this->validateResponse($e->getResponse()->getStatusCode());
         }
     }

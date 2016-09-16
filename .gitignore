@@ -36,5 +36,8 @@ Thumbs.db
 *.swp
 *.swo
 
+# PhpStorm
+.idea
+
 # Don't include Vendors directory
 Vendors/

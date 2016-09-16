@@ -7,8 +7,6 @@
  */
 namespace Tests\VirusTotal;
 
-use \Guzzle\Http\Client as GuzzleClient;
-
 /**
  * Exercise validateResponse() logic
  */

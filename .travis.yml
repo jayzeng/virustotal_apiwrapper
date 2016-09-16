@@ -2,13 +2,13 @@ language:
   php
 
 php:
-  - 5.3
-  - 5.4
   - 5.5
+  - 5.6
+  - 7.0
 
 before_script:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar update -v
+  - php composer.phar install -v
 
 script:
   - Vendors/bin/phpunit --coverage-text --configuration Tests/Conf/phpunit.xml Tests
