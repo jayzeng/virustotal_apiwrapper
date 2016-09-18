@@ -6,7 +6,7 @@
          stopOnSkipped="false"
          convertErrorsToExceptions="false"
          verbose="true"
-         strict="true"
+         report-useless-tests="true"
     >
 
     <testsuites>
