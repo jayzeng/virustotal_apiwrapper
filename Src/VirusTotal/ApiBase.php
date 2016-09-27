@@ -40,6 +40,11 @@ class ApiBase
         }
     }
 
+    private function to_json($response) {
+        $jsonified_response = json_decode($response->getBody(), true);
+        return $jsonified_response;
+    }
+
     /**
      * Util function to make post request
      * @param string          $endpoint
@@ -51,9 +56,10 @@ class ApiBase
      */
     protected function makePostRequest($endpoint, array $params) {
         try {
+            $params['form_params'] = $params;
             $response = $this->_client->post($endpoint, $params);
             $this->validateResponse($response->getStatusCode());
-            return $response;
+            return $this->to_json($response);
         } catch(ClientException $e) {
             $this->validateResponse($e->getResponse()->getStatusCode());
         }
