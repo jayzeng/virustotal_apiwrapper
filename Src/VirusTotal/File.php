@@ -11,12 +11,13 @@ class File extends ApiBase
         $data = $this->_client->post( self::API_ENDPOINT . 'file/scan', [
             'multipart' => [
                 [
-                    'name'     => 'apiKey',
-                    'contents'  => $this->_apiKey,
+                    'name' => 'file',
+                    'contents' => fopen($file,'r'),
+                    'filename' => $file
                 ],
                 [
-                    'name'     => $file,
-                    'contents' => fopen($file, 'r')
+                    'name' => 'apikey',
+                    'contents' => $this->_apiKey
                 ]
             ]
         ]);
