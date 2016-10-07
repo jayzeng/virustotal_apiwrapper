@@ -2,7 +2,7 @@
 require_once '../Vendors/autoload.php';
 
 $urls = array('www.google.com', 'www.yahoo.com', 'infysec.com');
-$apiKey = 'your_api_key';
+$apiKey = 'screct';
 
 $urlInst = new \VirusTotal\Url($apiKey);
 

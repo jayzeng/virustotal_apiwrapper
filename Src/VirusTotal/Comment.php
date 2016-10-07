@@ -14,7 +14,7 @@ class Comment extends ApiBase
                         'comment'  => $comment,
                         'apikey'   => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 
 }

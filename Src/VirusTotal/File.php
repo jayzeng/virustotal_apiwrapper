@@ -8,11 +8,21 @@ class File extends ApiBase
      * @param string $file   absolute file path
      */
     public function scan($file) {
-        $data = $this->_client->post( self::API_ENDPOINT . 'file/scan' )
-                              ->addPostFields(array('apikey' => $this->_apiKey))
-                              ->addPostFiles(array('file' => $file));
+        $data = $this->_client->post( self::API_ENDPOINT . 'file/scan', [
+            'multipart' => [
+                [
+                    'name' => 'file',
+                    'contents' => fopen($file,'r'),
+                    'filename' => $file
+                ],
+                [
+                    'name' => 'apikey',
+                    'contents' => $this->_apiKey
+                ]
+            ]
+        ]);
 
-        return $data->send()->json();
+        return $data->send();
     }
 
     /**
@@ -24,7 +34,7 @@ class File extends ApiBase
                         'resource' => $resource,
                         'apikey'   => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 
     /**
@@ -36,6 +46,6 @@ class File extends ApiBase
                     'resource' => $resource,
                     'apikey'   => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 }

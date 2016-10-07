@@ -12,7 +12,7 @@ class Ip extends ApiBase
                         'ip'       => $ip,
                         'apikey'   => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 
 }

@@ -12,7 +12,7 @@ class Url extends ApiBase
                         'url'    => $url,
                         'apikey' => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 
     /**
@@ -24,7 +24,7 @@ class Url extends ApiBase
                     'resource' => $resource,
                     'apikey'   => $this->_apiKey,
                     ));
-        return $data->json();
+        return $data;
     }
 }
 
