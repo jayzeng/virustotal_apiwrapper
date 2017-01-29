@@ -7,24 +7,21 @@ class File extends ApiBase
      * @see https://www.virustotal.com/en/documentation/public-api/#scanning-files
      * @param string $file   absolute file path
      */
-    public function scan($file) {
-        $response = $this->_client->post('file/scan', [
-            'multipart' => [
-                [
-                    'name' => 'file',
-                    'contents' => fopen($file,'r'),
-                    'filename' => $file
-                ],
-                [
-                    'name' => 'apikey',
-                    'contents' => $this->_apiKey
-                ]
-            ]
-        ]);
+     public function scan($file) {
+         $data = $this->makePostRequest('file/scan', [
+             [
+                 'name' => 'file',
+                 'contents' => fopen($file, 'r'),
+                 'filename' => basename($file)
+             ],
+             [
+                 'name' => 'apikey',
+                 'contents' => $this->_apiKey
+             ]
+         ], 'multipart');
 
-        $this->validateResponse($response->getStatusCode());
-        return $this->to_json($response);
-    }
+         return $data;
+     }
 
     /**
      * @see https://www.virustotal.com/en/documentation/public-api/#rescanning-files

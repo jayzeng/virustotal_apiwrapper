@@ -49,14 +49,15 @@ class ApiBase
      * Util function to make post request
      * @param string          $endpoint
      * @param array           $params
+     * @param string          $type form_params or multipart
      * @return (?)
      * @see Client
      * @throw \VirusTotal\Exceptions\RateLimitException
      * @throw \VirusTotal\Exceptions\InvalidApiKeyException
      */
-    protected function makePostRequest($endpoint, array $params) {
+    protected function makePostRequest($endpoint, array $params, $type = 'form_params') {
         try {
-            $params['form_params'] = $params;
+            $params[$type] = $params;
             $response = $this->_client->post($endpoint, $params);
             $this->validateResponse($response->getStatusCode());
             return $this->to_json($response);
