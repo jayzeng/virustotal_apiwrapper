@@ -40,7 +40,7 @@ class ApiBase
         }
     }
 
-    private function to_json($response) {
+    protected function to_json($response) {
         $jsonified_response = json_decode($response->getBody(), true);
         return $jsonified_response;
     }

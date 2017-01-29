@@ -8,7 +8,7 @@ class File extends ApiBase
      * @param string $file   absolute file path
      */
     public function scan($file) {
-        $data = $this->_client->post( self::API_ENDPOINT . 'file/scan', [
+        $response = $this->_client->post('file/scan', [
             'multipart' => [
                 [
                     'name' => 'file',
@@ -22,7 +22,8 @@ class File extends ApiBase
             ]
         ]);
 
-        return $data->send();
+        $this->validateResponse($response->getStatusCode());
+        return $this->to_json($response);
     }
 
     /**
